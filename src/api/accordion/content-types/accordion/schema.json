@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accordions",
+  "info": {
+    "singularName": "accordion",
+    "pluralName": "accordions",
+    "displayName": "Accordion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "block_content": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::block-content.block-content",
+      "inversedBy": "accordions"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

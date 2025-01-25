@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "block_contents",
+  "info": {
+    "singularName": "block-content",
+    "pluralName": "block-contents",
+    "displayName": "Block content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "accordions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::accordion.accordion",
+      "mappedBy": "block_content"
+    }
+  }
+}
