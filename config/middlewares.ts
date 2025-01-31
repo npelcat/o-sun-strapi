@@ -2,7 +2,9 @@ export default [
   {
     name: "strapi::cors",
     config: {
-      origin: ["https://o-sun-phi.vercel.app/"],
+      origin: [
+        "https://o-sun-git-strapi-integration-nad-cats-projects.vercel.app/",
+      ],
       headers: "*",
     },
   },
