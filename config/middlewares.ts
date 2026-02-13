@@ -19,16 +19,25 @@ export default [
             "data:",
             "blob:",
             "https://market-assets.strapi.io",
-            "https://res.cloudinary.com", // Ajout de Cloudinary
+            "https://res.cloudinary.com",
           ],
         },
       },
     },
   },
-  "strapi::cors",
   "strapi::poweredBy",
   "strapi::query",
-  "strapi::body",
+  {
+    name: "strapi::body",
+    config: {
+      formLimit: "256mb", // Limite pour les formulaires
+      jsonLimit: "256mb", // Limite pour JSON
+      textLimit: "256mb", // Limite pour le texte
+      formidable: {
+        maxFileSize: 250 * 1024 * 1024, // 250MB en bytes
+      },
+    },
+  },
   "strapi::session",
   "strapi::favicon",
   "strapi::public",
