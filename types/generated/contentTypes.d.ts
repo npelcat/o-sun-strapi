@@ -506,6 +506,42 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPricingCardPricingCard extends Struct.CollectionTypeSchema {
+  collectionName: 'pricing_cards';
+  info: {
+    displayName: 'Pricing card';
+    pluralName: 'pricing-cards';
+    singularName: 'pricing-card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pricing-card.pricing-card'
+    > &
+      Schema.Attribute.Private;
+    picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    price: Schema.Attribute.String;
+    pricingcard: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
@@ -1053,6 +1089,7 @@ declare module '@strapi/strapi' {
       'api::block-content.block-content': ApiBlockContentBlockContent;
       'api::component-with-link.component-with-link': ApiComponentWithLinkComponentWithLink;
       'api::page.page': ApiPagePage;
+      'api::pricing-card.pricing-card': ApiPricingCardPricingCard;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

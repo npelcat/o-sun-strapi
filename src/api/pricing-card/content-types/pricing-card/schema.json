@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pricing_cards",
+  "info": {
+    "singularName": "pricing-card",
+    "pluralName": "pricing-cards",
+    "displayName": "Pricing card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "price": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "link": {
+      "type": "string"
+    },
+    "pricingcard": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}
