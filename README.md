@@ -17,7 +17,10 @@ Prerequisites: Node 22+ (or whatever version you use), npm
 
 ## Content types
 
-[Liste tes vrais content types : accordions, block-contents, component-with-links, pricing-cards]
+- **accordions** — collapsible content blocks (e.g. FAQ)
+- **block-contents** — rich text sections with an optional picture
+- **link-component** — content block with a link and picture
+- **pricing-cards** — service pricing display
 
 ## Deployment
 
@@ -29,9 +32,9 @@ for the full list required.
 
 ## Access
 
-Admin panel: [ton URL Koyeb]/admin
+Admin panel: https://annual-bessie-nadcat-17feb7ed.koyeb.app/admin
 Read-only public API, no auth required for GET requests on published content.
 
 ## Contact
 
-[ton contact, comme pour le repo principal]
+Nadège Pelcat — https://www.linkedin.com/in/nadege-pelcat/
