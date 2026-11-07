@@ -1,0 +1,29 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+    groups:
+      # All Strapi packages must always have the same version,
+      # so they are updated together in one pull request
+      strapi:
+        patterns:
+          - "@strapi/*"
+
+      # Group 2: minor and patch updates
+      safe-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+      # Group 3: risky (major) updates
+      breaking-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "major"
